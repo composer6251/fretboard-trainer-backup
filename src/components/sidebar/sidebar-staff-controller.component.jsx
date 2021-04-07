@@ -54,7 +54,6 @@ class SidebarStaffController extends Component  {
         )
     }
 
-    //TESTING
     randomNoteClick(){
         generateDisplayRandomNote.displayRandomNote();
     }

@@ -11,29 +11,43 @@ import TitleOfPage from '../../components/title-of-page/title-of-page.component'
 import StaffComponent from '../../components/staff/staff.component';
 import HeaderComponent from '../../components/header/header.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
-import TestImageComponent from '../../components/test/test-image.component';
+import { Component } from 'react';
 
 
-const FretboardPage = () => {
-    return(
-        <div id="fixed-page">
-            <div align="left" className="sidebar">
-                <Sidebar className="sidebar"/>
+class FretboardPage extends Component {
+
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            noteId : '',
+            key : '',
+            scale : '',
+            octaves : null
+        }
+    }
+
+    render(){
+        return(
+            <div id="fixed-page">
+                <div align="left" className="sidebar">
+                    <Sidebar className="sidebar" key={this.state.noteId}/>
+                </div>
+                <div>
+                    <HeaderComponent id='homepage-link'/>
+                </div>
+                <div className='title-page'>
+                    <TitleOfPage title='Fretboard Trainer'/>
+                </div>
+                <div align="right" className="staff-component-container">
+                    <StaffComponent key={this.state.noteId}/>
+                </div>
+                <div align="right">
+                    <FretboardImageComponent/>
+                </div>
             </div>
-            <div>
-                <HeaderComponent id='homepage-link'/>
-            </div>
-            <div className='title-page'>
-                <TitleOfPage title='Fretboard Trainer'/>
-            </div>
-            <div align="right" className="staff-component-container">
-                <StaffComponent />
-            </div>
-            <div align="right">
-                <FretboardImageComponent/>
-            </div>
-        </div>
-    )
+        )
+    }
 }; 
 
 export default FretboardPage;

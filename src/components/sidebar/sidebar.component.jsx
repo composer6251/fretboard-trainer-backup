@@ -3,7 +3,8 @@ import React from 'react';
 import './sidebar.styles.css';
 import SidebarStaffController from './sidebar-staff-controller.component';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+    console.log('Sidebar props.noteId :>> ', props.noteId);
     return(
 
         <div>
