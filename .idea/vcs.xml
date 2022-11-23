@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Music-Website" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/devon-code-samples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fretboard-trainer-backup" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/java-rest-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/music-trainer-back-end" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/music-trainer-feign-test" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/record-cataloguer-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rest-api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rest-ui" vcs="Git" />
+  </component>
+</project>

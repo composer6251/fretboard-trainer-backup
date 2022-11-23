@@ -1,0 +1,90 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000000132daba9c, pid=57261, tid=10499
+#
+# JRE version: OpenJDK Runtime Environment Zulu11.50+19-CA (11.0.12+7) (build 11.0.12+7-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Zulu11.50+19-CA (11.0.12+7-LTS, mixed mode, tiered, compressed oops, g1 gc, bsd-aarch64)
+# Problematic frame:
+# C  [libtesseract.5.dylib+0x1ba9c]  _ZN9tesseract9Tesseract15recog_all_wordsEPNS_8PAGE_RESEPNS_10ETEXT_DESCEPKNS_4TBOXEPKci+0xdc
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://www.azul.com/support/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=55210:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 ImageReader
+
+Host: MacBookPro17,1 arm64 1 MHz, 8 cores, 16G, Darwin 21.6.0
+Time: Thu Oct 20 13:30:35 2022 EDT elapsed time: 0.629767 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000014600a000):  JavaThread "main" [_thread_in_native, id=10499, stack(0x000000016da18000,0x000000016dc1b000)]
+
+Stack: [0x000000016da18000,0x000000016dc1b000],  sp=0x000000016dc19650,  free space=2053k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libtesseract.5.dylib+0x1ba9c]  _ZN9tesseract9Tesseract15recog_all_wordsEPNS_8PAGE_RESEPNS_10ETEXT_DESCEPKNS_4TBOXEPKci+0xdc
+C  [libtesseract.5.dylib+0x5550]  _ZN9tesseract11TessBaseAPI9RecognizeEPNS_10ETEXT_DESCE+0x398
+C  [libtesseract.5.dylib+0x42a0]  _ZN9tesseract11TessBaseAPI11GetUTF8TextEv+0x3c
+C  [jna4059268235261234343.tmp+0x1004c]  ffi_prep_closure_loc+0x15a4
+C  [jna4059268235261234343.tmp+0xea18]  ffi_call+0x520
+C  [jna4059268235261234343.tmp+0x6814]  Java_com_sun_jna_Native_invokePointer+0x97c
+C  [jna4059268235261234343.tmp+0x5ec4]  Java_com_sun_jna_Native_invokePointer+0x2c
+j  com.sun.jna.Native.invokePointer(Lcom/sun/jna/Function;JI[Ljava/lang/Object;)J+0
+j  com.sun.jna.Function.invokePointer(I[Ljava/lang/Object;)Lcom/sun/jna/Pointer;+7
+j  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;ZI)Ljava/lang/Object;+385
+j  com.sun.jna.Function.invoke(Ljava/lang/reflect/Method;[Ljava/lang/Class;Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;+271
+j  com.sun.jna.Library$Handler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+390
+j  com.sun.proxy.$Proxy0.TessBaseAPIGetUTF8Text(Lnet/sourceforge/tess4j/ITessAPI$TessBaseAPI;)Lcom/sun/jna/Pointer;+16
+j  net.sourceforge.tess4j.Tesseract.getOCRText(Ljava/lang/String;I)Ljava/lang/String;+269
+j  net.sourceforge.tess4j.Tesseract.doOCR(Ljavax/imageio/IIOImage;Ljava/lang/String;Ljava/awt/Rectangle;I)Ljava/lang/String;+18
+j  net.sourceforge.tess4j.Tesseract.doOCR(Ljava/io/File;Ljava/awt/Rectangle;)Ljava/lang/String;+126
+j  net.sourceforge.tess4j.Tesseract.doOCR(Ljava/io/File;)Ljava/lang/String;+3
+j  ImageReader.main([Ljava/lang/String;)V+53
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x332fb0]  _ZN9JavaCalls11call_helperEP9JavaValueRK12methodHandleP17JavaCallArgumentsP6Thread+0x2e0
+V  [libjvm.dylib+0x381a80]  _ZL17jni_invoke_staticP7JNIEnv_P9JavaValueP8_jobject11JNICallTypeP10_jmethodIDP18JNI_ArgumentPusherP6Thread+0x10c
+V  [libjvm.dylib+0x38500c]  jni_CallStaticVoidMethod+0x154
+C  [libjli.dylib+0x5a10]  JavaMain+0xb34
+C  [libjli.dylib+0x7b34]  ThreadJavaMain+0xc
+C  [libsystem_pthread.dylib+0x726c]  _pthread_start+0x94
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.jna.Native.invokePointer(Lcom/sun/jna/Function;JI[Ljava/lang/Object;)J+0
+j  com.sun.jna.Function.invokePointer(I[Ljava/lang/Object;)Lcom/sun/jna/Pointer;+7
+j  com.sun.jna.Function.invoke([Ljava/lang/Object;Ljava/lang/Class;ZI)Ljava/lang/Object;+385
+j  com.sun.jna.Function.invoke(Ljava/lang/reflect/Method;[Ljava/lang/Class;Ljava/lang/Class;[Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/Object;+271
+j  com.sun.jna.Library$Handler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+390
+j  com.sun.proxy.$Proxy0.TessBaseAPIGetUTF8Text(Lnet/sourceforge/tess4j/ITessAPI$TessBaseAPI;)Lcom/sun/jna/Pointer;+16
+j  net.sourceforge.tess4j.Tesseract.getOCRText(Ljava/lang/String;I)Ljava/lang/String;+269
+j  net.sourceforge.tess4j.Tesseract.doOCR(Ljavax/imageio/IIOImage;Ljava/lang/String;Ljava/awt/Rectangle;I)Ljava/lang/String;+18
+j  net.sourceforge.tess4j.Tesseract.doOCR(Ljava/io/File;Ljava/awt/Rectangle;)Ljava/lang/String;+126
+j  net.sourceforge.tess4j.Tesseract.doOCR(Ljava/io/File;)Ljava/lang/String;+3
+j  ImageReader.main([Ljava/lang/String;)V+53
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x000000000000000c
+
+Register to memory mapping:
+
+ x0=0x00000001468605e0 points into unknown readable memory: 0x0000000146860020 | 20 00 86 46 01 00 00 00
+ x1=0x0 is NULL
+ x2=0x0 is NULL
+ x3=0x0 is NULL
+ x4=0x0 is NULL
+ x5=0x0 is NULL
+ x6=0x009629d87d36ca00 is an unknown value
+ x7=0x0000000000000060 is an unknown value
+ x8=0x0 is NULL
+ x9=0x0 is NULL
+x10=0x00006000018cefa0 points into unknown readable memory: 0x00006000018cf480 | 80 f4 8c 01 00 60 00 00
+x11=0x0000000000000001 is an unknown value
+x12=0x0000000008000000 is an unknown value
+x13=0x0000000018000000 is an unknown value
+x14=

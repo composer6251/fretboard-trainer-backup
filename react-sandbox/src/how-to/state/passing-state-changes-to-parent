@@ -1,0 +1,48 @@
+/** STEPS TO HAVE LIFTED STATE
+ * 1. Parent component
+ * 2. Create handlerMethod
+ * 3. Bind to this in constructor
+ * 4. Render child passing in handlerMethod as a property
+ * 5. Create Child component
+ * 6. constructor(props)
+ * 7  super(props)
+ * 8. Create handler method to call props.handlerMethod
+ * 9. Bind child handler method to this in constructor
+ * 10. Parent handlerMethod should set state in the PARENT
+ */
+
+/****setState FUNCTION IS ASYNC. PASS IN CALLBACK FUNCTION AS SECOND ARGUMENT IF POSSIBLE */
+
+/****PARENT TO CHILD
+ * 
+ *      Use props(user defined properties residing in parent)
+ */
+
+/****GRANDPARENT TO GRANDCHILD
+ * 
+ *      Pass components to grandchild with props.children ????
+ */
+
+/****SIBLING TO SIBLING
+ * 
+ *      Lift state to first common parent. Then the parent can hold the state and pass to children as needed
+ */
+
+/****CHILD TO PARENT
+ * 
+ * Child should only pass events from user actions, in most cases.
+ * 
+ * <ChildComponent>
+ * handleChange(event => {
+ *      childHandleChangeMethod(event); // This method should call 
+ *      the parent handleChange method and pass in event. That way the parent gets to decide/change state
+ * }) 
+ * 
+ * <ParentElement>
+ *      return(
+ *          <ChildElement handleChange={handleChange} />
+ *      )
+ * 
+ * 
+ * 
+ */
